@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "generate": "node src/scripts/generateProducts.js",
-    "get-products-by-min-price": "node src/scripts/getProductsByMinPrice.js"
+    "get-products-by-min-price": "node src/scripts/getProductsByMinPrice.js",
+    "get-total-price": "node src/scripts/getTotalPrice.js"
   },
   "repository": {
     "type": "git",
