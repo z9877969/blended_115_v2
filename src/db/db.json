@@ -3,84 +3,72 @@
     "id": "775bb30f-7ff5-458f-8d96-cf997da803e4",
     "name": "Oriental Steel Shirt",
     "price": "851.28",
-    "category": "Computers",
-    "description": "Experience the purple brilliance of our Salad, perfect for oily environments"
+    "category": "Computers"
   },
   {
     "id": "76fe6805-7e18-415b-bdd9-9fd6131f99fe",
     "name": "Bespoke Steel Car",
     "price": "392.10",
-    "category": "Toys",
-    "description": "Introducing the Tuvalu-inspired Mouse, blending rigid style with local craftsmanship"
+    "category": "Toys"
   },
   {
     "id": "6d5aad2c-28ab-4ee8-b34d-afad7b3c9b6f",
     "name": "Handmade Gold Ball",
     "price": "717.15",
-    "category": "Movies",
-    "description": "The pink Shoes combines Guyana aesthetics with Rutherfordium-based durability"
+    "category": "Movies"
   },
   {
     "id": "2f38b4f2-8ac7-48df-b112-d313f717ae3f",
     "name": "Licensed Steel Chicken",
     "price": "928.49",
-    "category": "Garden",
-    "description": "New olive Computer with ergonomic design for faint comfort"
+    "category": "Garden"
   },
   {
     "id": "2235e33c-345f-49c5-830c-906e5fb7756c",
     "name": "Frozen Wooden Pizza",
     "price": "310.20",
-    "category": "Kids",
-    "description": "Introducing the Oman-inspired Towels, blending any style with local craftsmanship"
+    "category": "Kids"
   },
   {
     "id": "ac0cf363-1540-4d56-829e-47d5cb615a2d",
     "name": "Modern Cotton Towels",
     "price": "322.79",
-    "category": "Electronics",
-    "description": "Discover the hippopotamus-like agility of our Chicken, perfect for sardonic users"
+    "category": "Electronics"
   },
   {
     "id": "30d1c844-8c51-4a97-befc-723a96106a4c",
     "name": "Luxurious Bamboo Sausages",
     "price": "669.15",
-    "category": "Automotive",
-    "description": "Ergonomic Sausages made with Silk for all-day fond support"
+    "category": "Automotive"
   },
   {
     "id": "f3ec9294-7e3d-4a4c-a65f-55a67bb412e1",
     "name": "Practical Cotton Computer",
     "price": "732.31",
-    "category": "Health",
-    "description": "Introducing the Hong Kong-inspired Mouse, blending carefree style with local craftsmanship"
+    "category": "Health"
   },
   {
     "id": "ede759fd-d31c-4d89-8d74-3d578880a223",
     "name": "Awesome Metal Chips",
     "price": "269.65",
-    "category": "Automotive",
-    "description": "Innovative Bike featuring snoopy technology and Aluminum construction"
+    "category": "Automotive"
   },
   {
     "id": "f95746f3-1fc1-42d0-b376-bf66d0023ddf",
     "name": "Unbranded Bronze Pizza",
     "price": "677.29",
-    "category": "Beauty",
-    "description": "Our deer-friendly Ball ensures voluminous comfort for your pets"
+    "category": "Beauty"
   },
   {
     "id": "898dc77e-346d-401a-a8a0-bcfc852f7628",
     "name": "Generic Metal Pizza",
     "price": "925.27",
-    "category": "Books",
-    "description": "Welch Inc's most advanced Gloves technology increases pointed capabilities"
+    "category": "Books"
   },
   {
     "id": "da3b2100-c2a7-491b-9ed8-b3a24519a27f",
     "name": "Luxurious Cotton Ball",
     "price": "363.90",
-    "category": "Clothing",
-    "description": "Our tangy-inspired Shoes brings a taste of luxury to your unique lifestyle"
+    "category": "Clothing"
   }
 ]
