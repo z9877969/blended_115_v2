@@ -10,3 +10,8 @@ export const getProductsById = async (productId) => {
   console.log(productId);
   return product;
 };
+
+export const createProduct = async (payload) => {
+  const newProduct = await Product.create(payload);
+  return newProduct;
+};

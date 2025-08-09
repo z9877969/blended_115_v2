@@ -1,9 +1,14 @@
 import createHttpError from 'http-errors';
-import { getAllProducts, getProductsById } from '../services/products.js';
+// import {
+//   createProduct,
+//   getAllProducts,
+//   getProductsById,
+// } from '../services/products.js';
+import * as s from '../services/products.js';
 import { isValidObjectId } from 'mongoose';
 
 export const getAllProductsController = async (req, res) => {
-  const products = await getAllProducts();
+  const products = await s.getAllProducts();
 
   res.status(200).json({
     status: 200,
@@ -17,7 +22,7 @@ export const getProductByIdController = async (req, res) => {
   if (!isValidObjectId(productId)) {
     throw createHttpError(400, 'Invalid id');
   }
-  const product = await getProductsById(productId);
+  const product = await s.getProductsById(productId);
 
   if (!product) {
     throw createHttpError(404, 'Product not found');
@@ -26,6 +31,15 @@ export const getProductByIdController = async (req, res) => {
   res.status(200).json({
     status: 200,
     message: `Successfully found product with id ${productId}!`,
+    data: product,
+  });
+};
+
+export const createProductController = async (req, res) => {
+  const product = await s.createProduct(req.body);
+  res.status(201).json({
+    status: 201,
+    message: 'Successfully created product!',
     data: product,
   });
 };
