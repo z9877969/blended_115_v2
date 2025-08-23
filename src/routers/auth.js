@@ -1,13 +1,13 @@
 import { Router } from 'express';
-import { validateBody } from '../middlewares/validateBody';
-import { userRegistrationSchema } from '../validation/user';
+import { validateBody } from '../middlewares/validateBody.js';
+import { userRegistrationSchema } from '../validation/user.js';
+import { registerUser } from '../controllers/user.js';
+
 export const authRouter = Router();
 
 authRouter.post(
   '/register',
   validateBody(userRegistrationSchema),
-  (req, res) => {
-    res.json('REGISTER user');
-  },
+  registerUser,
 );
 authRouter.post('/login', (req, res) => {});

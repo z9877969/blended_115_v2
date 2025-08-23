@@ -1,5 +1,6 @@
 import { Schema, model } from 'mongoose';
-const sessionSchema = new Schema(
+
+export const sessionSchema = new Schema(
   {
     userId: {
       type: String,
@@ -27,3 +28,5 @@ const sessionSchema = new Schema(
     versionKey: false,
   },
 );
+
+export const SessionCollection = model('session', sessionSchema);
