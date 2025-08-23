@@ -5,10 +5,11 @@ import createHttpError from 'http-errors';
 //   getProductsById,
 // } from '../services/products.js';
 import * as s from '../services/products.js';
-import { isValidObjectId } from 'mongoose';
 
 export const getAllProductsController = async (req, res) => {
-  const products = await s.getAllProducts();
+  const { category, minPrice, maxPrice } = req.query;
+
+  const products = await s.getAllProducts({ category, minPrice, maxPrice });
 
   res.status(200).json({
     status: 200,
