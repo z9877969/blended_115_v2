@@ -19,9 +19,6 @@ export const getAllProductsController = async (req, res) => {
 
 export const getProductByIdController = async (req, res) => {
   const { productId } = req.params;
-  if (!isValidObjectId(productId)) {
-    throw createHttpError(400, 'Invalid id');
-  }
   const product = await s.getProductsById(productId);
 
   if (!product) {
