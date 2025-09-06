@@ -1,0 +1,18 @@
+tags:
+  - Products
+summary: Get products list
+operationId: getAllProducts
+description: 'Returns a list of all products'
+responses:
+  '200':
+    description: 'Successfully operation'
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/tasks/get_all_user_tasks_response.yaml'
+  '401':
+    description: Unauthorized
+    content: {}
+  '400':
+    description: Bad request
+    content: {}
