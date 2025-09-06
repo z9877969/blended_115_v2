@@ -12,12 +12,15 @@ tags:
     description: Some products API
 servers:
   - url: http://localhost:4040
-  - url: #посилання на задеплоєний сайт
+  # - url: #посилання на задеплоєний сайт
 paths:
   /products:
     get:
       $ref: ../swagger/paths/products/get.yaml
 
+  /products/{id}:
+    get:
+      $ref: ../swagger/paths/products/{id}/get.yaml
 
 components:
   securitySchemes:

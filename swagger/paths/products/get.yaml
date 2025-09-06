@@ -3,10 +3,12 @@ tags:
 summary: Get products list
 operationId: getAllProducts
 description: 'Returns a list of all products'
+security:
+  - bearerAuth: []
 parameters:
   - name: category
     in: query
-    description: Product`s category name
+    description: Product's category name
     schema:
       type: string
       enum:
@@ -20,26 +22,29 @@ parameters:
     schema:
       type: number
       minimum: 0
-      example: 0
+      example: 100
   - name: maxPrice
     in: query
     description: Max product price
     schema:
       type: number
       minimum: 0
-      example: 0
-
+      example: 1000
 responses:
   '200':
-    description: 'Successfully operation'
+    description: 'Successful operation'
     content:
       application/json:
         schema:
           type: object
           description: Products response
+          required:
+            - status
+            - message
+            - data
           properties:
             status:
-              type: number
+              type: integer
               example: 200
             message:
               type: string
@@ -50,34 +55,77 @@ responses:
               items:
                 type: object
                 properties:
+                  _id:
+                    type: string
+                    example: '65ca67e7ae7f10c88b598384'
                   name:
-                    # $ref: ../../components/examples/product/product_name.exm.yaml
                     type: string
                     minLength: 1
                     maxLength: 24
                     example: Smartphone
                   price:
-                    # $ref: ../../components/examples/product/product_price.exm.yaml
                     type: number
-                    min: 0
-                    max: 2000000
+                    minimum: 0
+                    maximum: 2000000
                     example: 40000
                   category:
-                    # $ref: ../../components/examples/product/product_category.exm.yaml
                     type: string
                     enum:
                       - books
                       - electronics
                       - clothing
                       - other
-                    example: clothing
+                    example: electronics
                   description:
-                    # $ref: ../../components/examples/product/product_description.exm.yaml
                     type: string
                     example: Some product description
-  '401':
-    description: Unauthorized
-    content: {}
   '400':
     description: Bad request
-    content: {}
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - status
+            - message
+            - data
+          properties:
+            status:
+              type: integer
+              example: 400
+            message:
+              type: string
+              example: BadRequestError
+            data:
+              type: object
+              required:
+                - message
+              properties:
+                message:
+                  type: string
+                  example: 'Invalid query parameters'
+  '401':
+    description: Unauthorized
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - status
+            - message
+            - data
+          properties:
+            status:
+              type: integer
+              example: 401
+            message:
+              type: string
+              example: UnauthorizedError
+            data:
+              type: object
+              required:
+                - message
+              properties:
+                message:
+                  type: string
+                  example: 'Authentication required'
