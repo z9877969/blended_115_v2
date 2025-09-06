@@ -92,30 +92,16 @@
                         "type": "object",
                         "properties": {
                           "name": {
-                            "type": "string",
-                            "minLength": 1,
-                            "maxLength": 24,
-                            "example": "Smartphone"
+                            "$ref": "#/components/examples/product_name"
                           },
                           "price": {
-                            "type": "number",
-                            "min": 0,
-                            "max": 2000000,
-                            "example": 40000
+                            "$ref": "#/components/examples/product_price"
                           },
                           "category": {
-                            "type": "string",
-                            "enum": [
-                              "books",
-                              "electronics",
-                              "clothing",
-                              "other"
-                            ],
-                            "example": "clothing"
+                            "$ref": "#/components/examples/product_category"
                           },
                           "description": {
-                            "type": "string",
-                            "example": "Some product description"
+                            "$ref": "#/components/examples/product_description"
                           }
                         }
                       }
@@ -142,6 +128,35 @@
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer"
+      }
+    },
+    "schemas": {},
+    "examples": {
+      "product_name": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 24,
+        "example": "Smartphone"
+      },
+      "product_price": {
+        "type": "number",
+        "min": 0,
+        "max": 2000000,
+        "example": 40000
+      },
+      "product_category": {
+        "type": "string",
+        "enum": [
+          "books",
+          "electronics",
+          "clothing",
+          "other"
+        ],
+        "example": "clothing"
+      },
+      "product_description": {
+        "type": "string",
+        "example": "Some product description"
       }
     }
   }

@@ -51,30 +51,13 @@ responses:
                 type: object
                 properties:
                   name:
-                    # $ref: ../../components/examples/product/product_name.exm.yaml
-                    type: string
-                    minLength: 1
-                    maxLength: 24
-                    example: Smartphone
+                    $ref: ../../components/examples/product/product_name.exm.yaml
                   price:
-                    # $ref: ../../components/examples/product/product_price.exm.yaml
-                    type: number
-                    min: 0
-                    max: 2000000
-                    example: 40000
+                    $ref: ../../components/examples/product/product_price.exm.yaml
                   category:
-                    # $ref: ../../components/examples/product/product_category.exm.yaml
-                    type: string
-                    enum:
-                      - books
-                      - electronics
-                      - clothing
-                      - other
-                    example: clothing
+                    $ref: ../../components/examples/product/product_category.exm.yaml
                   description:
-                    # $ref: ../../components/examples/product/product_description.exm.yaml
-                    type: string
-                    example: Some product description
+                    $ref: ../../components/examples/product/product_description.exm.yaml
   '401':
     description: Unauthorized
     content: {}
