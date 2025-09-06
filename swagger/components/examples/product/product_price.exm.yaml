@@ -1,0 +1,4 @@
+type: number
+min: 0
+max: 2000000
+example: 40000

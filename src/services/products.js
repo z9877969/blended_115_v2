@@ -1,7 +1,25 @@
 import { Product } from '../db/models/product.js';
 
-export const getAllProducts = async (query) => {
-  const products = await Product.find();
+export const getAllProducts = async ({ category, minPrice, maxPrice }) => {
+  const options = {};
+
+  if (category) {
+    options.category = category;
+  }
+
+  if (minPrice && !maxPrice) {
+    options.price = { $gte: minPrice };
+  }
+
+  if (!minPrice && maxPrice) {
+    options.price = { $lte: maxPrice };
+  }
+
+  if (minPrice && maxPrice) {
+    options.price = { $gte: minPrice, $lte: maxPrice };
+  }
+
+  const products = await Product.find(options);
   return products;
 };
 

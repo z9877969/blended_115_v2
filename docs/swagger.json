@@ -17,8 +17,126 @@
       "url": null
     }
   ],
-  "tags": null,
-  "paths": null,
+  "tags": [
+    {
+      "name": "Products",
+      "description": "Some products API"
+    }
+  ],
+  "paths": {
+    "/products": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Get products list",
+        "operationId": "getAllProducts",
+        "description": "Returns a list of all products",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "description": "Product`s category name",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "books",
+                "electronics",
+                "clothing",
+                "other"
+              ]
+            }
+          },
+          {
+            "name": "minPrice",
+            "in": "query",
+            "description": "Min product price",
+            "schema": {
+              "type": "number",
+              "minimum": 0,
+              "example": 0
+            }
+          },
+          {
+            "name": "maxPrice",
+            "in": "query",
+            "description": "Max product price",
+            "schema": {
+              "type": "number",
+              "minimum": 0,
+              "example": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "Products response",
+                  "properties": {
+                    "status": {
+                      "type": "number",
+                      "example": 200
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successfully found products!"
+                    },
+                    "data": {
+                      "type": "array",
+                      "description": "Products list",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 24,
+                            "example": "Smartphone"
+                          },
+                          "price": {
+                            "type": "number",
+                            "min": 0,
+                            "max": 2000000,
+                            "example": 40000
+                          },
+                          "category": {
+                            "type": "string",
+                            "enum": [
+                              "books",
+                              "electronics",
+                              "clothing",
+                              "other"
+                            ],
+                            "example": "clothing"
+                          },
+                          "description": {
+                            "type": "string",
+                            "example": "Some product description"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          }
+        }
+      }
+    }
+  },
   "components": {
     "securitySchemes": {
       "bearerAuth": {

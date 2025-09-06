@@ -3,13 +3,78 @@ tags:
 summary: Get products list
 operationId: getAllProducts
 description: 'Returns a list of all products'
+parameters:
+  - name: category
+    in: query
+    description: Product`s category name
+    schema:
+      type: string
+      enum:
+        - books
+        - electronics
+        - clothing
+        - other
+  - name: minPrice
+    in: query
+    description: Min product price
+    schema:
+      type: number
+      minimum: 0
+      example: 0
+  - name: maxPrice
+    in: query
+    description: Max product price
+    schema:
+      type: number
+      minimum: 0
+      example: 0
+
 responses:
   '200':
     description: 'Successfully operation'
     content:
       application/json:
         schema:
-          $ref: '../../components/schemas/tasks/get_all_user_tasks_response.yaml'
+          type: object
+          description: Products response
+          properties:
+            status:
+              type: number
+              example: 200
+            message:
+              type: string
+              example: 'Successfully found products!'
+            data:
+              type: array
+              description: Products list
+              items:
+                type: object
+                properties:
+                  name:
+                    # $ref: ../../components/examples/product/product_name.exm.yaml
+                    type: string
+                    minLength: 1
+                    maxLength: 24
+                    example: Smartphone
+                  price:
+                    # $ref: ../../components/examples/product/product_price.exm.yaml
+                    type: number
+                    min: 0
+                    max: 2000000
+                    example: 40000
+                  category:
+                    # $ref: ../../components/examples/product/product_category.exm.yaml
+                    type: string
+                    enum:
+                      - books
+                      - electronics
+                      - clothing
+                      - other
+                    example: clothing
+                  description:
+                    # $ref: ../../components/examples/product/product_description.exm.yaml
+                    type: string
+                    example: Some product description
   '401':
     description: Unauthorized
     content: {}

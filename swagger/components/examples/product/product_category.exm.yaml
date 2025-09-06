@@ -1,0 +1,7 @@
+type: string
+enum:
+  - books
+  - electronics
+  - clothing
+  - other
+example: clothing

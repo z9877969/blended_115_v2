@@ -4,13 +4,18 @@ apis:
     root: docs/openapi.yaml
 extends:
   - recommended
+plugins:
+  - './docs/plugins/remove-example-schemas.cjs'
+decorators:
+  # Активуємо наш декоратор за його ID
+  'remove-example-schemas/post-bundle': on
 rules:
   no-unused-components: error
 theme:
   htmlTemplate: ./docs/index.html
   colors:
     primary:
-      main: "#32329f"
+      main: '#32329f'
   generateCodeSamples:
     languages:
       - lang: curl

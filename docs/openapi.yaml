@@ -16,7 +16,7 @@ servers:
 paths:
   /products:
     get:
-      $ref: ../swagger/paths/
+      $ref: ../swagger/paths/products/get.yaml
 
 
 components:
